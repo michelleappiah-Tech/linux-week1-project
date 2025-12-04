@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Git Branching </title>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="badge"></div>
+      <div>
+        <h1>Git branching & merging</h1>
+        <p class="muted">Topics: git branch, git checkout, git switch, merge, resolving conflicts</p>
+      </div>
+    </header>
+
+    <section class="intro">
+      <p>As I continued practicing Git, I started exploring how branches work and realized they make managing different parts of a project much easier. A branch is a separate line of development where I can work on features, fixes, or ideas without touching the main project.</p>
+    </section>
+
+    <section>
+      <h2>Common commands</h2>
+      <ul class="chips">
+        <li>git branch</li>
+        <li>git checkout</li>
+        <li>git switch</li>
+        <li>git switch -c</li>
+        <li>git merge</li>
+        <li>resolving merge conflicts</li>
+      </ul>
+
+      <div class="card">
+        <p class="muted">Practices & notes:</p>
+        <p>Use <strong>git branch</strong> to list/create branches. Switch branches with <strong>git switch &lt;name&gt;</strong> (preferred) or <strong>git checkout &lt;name&gt;</strong> (older). Create+switch: <strong>git switch -c &lt;name&gt;</strong>. Rename or delete branches with <strong>git branch -m</strong> and <strong>git branch -d</strong> (or <code>-D</code> to force delete).</p>
+        <p>To merge: switch to the target branch (e.g. <code>main</code>) and run <strong>git merge &lt;feature-branch&gt;</strong>. Merges can be fast-forward or create a merge commit. Merge conflicts require manual resolution — Git will mark conflicted files; after fixing them, run <code>git add</code> and <code>git commit</code> to complete the merge.</p>
+
+        <pre><code># create a branch
+git branch feature-xyz
+
+# create and switch
+git switch -c feature-xyz
+
+# switch (preferred)
+git switch feature-xyz
+
+# old way to switch
+# git checkout feature-xyz
+
+# merge into main
+git switch main
+git merge feature-xyz
+
+# after resolving conflicts
+git add &lt;file&gt;
+git commit -m "resolve merge conflicts"
+</code></pre>
+      </div>
+    </section>
+
+    <footer class="foot muted">Understanding branching and merging makes version management much easier — conflicts are just decisions waiting to be made.</footer>
+  </div>
+</body>
+</html>
